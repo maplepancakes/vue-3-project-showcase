@@ -1,24 +1,5 @@
-# vue3
+# PROJECT STATUS: In Progress
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Project 1: List App
+##### Objective: To demonstrate a basic understanding of text interpolation, directive usage, methods, computed properties, and components.
+Built using Vue.js 3 and Tailwind.
