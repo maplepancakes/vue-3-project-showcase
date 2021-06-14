@@ -33,37 +33,37 @@ export default
     {
         addInputToListing()
         {
-        if (this.input === "")
-        {
-            alert(this.alertMessageBlank);
+          if (this.input === "")
+          {
+              alert(this.alertMessageBlank);
 
-            return;
-        }
+              return;
+          }
 
-        for (let i = 0; i < this.listing.length; i++)
-        {
-            if (this.input === this.listing[i])
-            {
-            alert(this.alertMessageExistingInput);
+          for (let i = 0; i < this.listing.length; i++)
+          {
+              if (this.input === this.listing[i])
+              {
+                alert(this.alertMessageExistingInput);
 
-            return;
-            }
-        }
+                return;
+              }
+          }
 
-        this.listing.push(this.input);
+          this.listing.push(this.input);
 
-        this.input = "";
+          this.input = "";
         },
         removeFromListing(listToRemove)
         {
-        this.listing = this.listing.filter(list => {return list !== listToRemove});
+          this.listing = this.listing.filter(list => {return list !== listToRemove});
         },
     },
     computed:
     {
         listLength()
         {
-        return this.listing.length;
+          return this.listing.length;
         },
     },
 }
