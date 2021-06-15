@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import HomePage from '../pages/HomePage.vue';
 import ListApp from '../pages/ListApp.vue';
 import CalendarApp from '../pages/CalendarApp.vue';
-import HomePage from '../pages/HomePage.vue';
+import MarkdownApp from '../pages/MarkdownApp.vue';
 
 const routes = 
 [
@@ -20,6 +21,11 @@ const routes =
     name: 'Calendar Application',
     component: CalendarApp,
   },
+  {
+    path: '/markdownApp',
+    name: 'Markdown Application',
+    component: MarkdownApp,
+  }
 ]
 
 const router = createRouter(
