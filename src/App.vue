@@ -1,15 +1,18 @@
 <template>
-  <NavigationBar/>
+  <AppHeader/>
   <router-view></router-view>
+  <AppFooter/>
 </template>
 
 <script>
-import NavigationBar from "./components/AppHeader.vue";
+import AppHeader from "./components/AppHeader.vue";
+import AppFooter from "./components/AppFooter.vue";
 export default
 {
   components:
   {
-    NavigationBar,
+    AppHeader,
+    AppFooter,
   }
 }
 </script>
