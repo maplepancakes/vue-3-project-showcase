@@ -1,20 +1,15 @@
 <template>
   <NavigationBar/>
-  <CalendarApp/>
+  <router-view></router-view>
 </template>
 
 <script>
 import NavigationBar from "./components/AppHeader.vue";
-// import ListApp from "./components/ListApp.vue";
-import CalendarApp from "./components/CalendarApp.vue";
-
 export default
 {
   components:
   {
     NavigationBar,
-    // ListApp,
-    CalendarApp,
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <nav class="border-b p-2 flex justify-evenly">
-        <a>List App</a>
-        <a>Calendar App</a>
+        <router-link to="/listApp">List App</router-link>
+        <router-link to="/calendarApp">Calendar App</router-link>
     </nav>
 </template>
 
