@@ -1,8 +1,8 @@
 {
   "name": "vue-3-project-showcase",
   "version": "0.1.0",
-  "description": "Project showcase for Vue 3 learning purposes",
   "private": true,
+  "description": "Project showcase for Vue 3 learning purposes",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "autoprefixer": "^9.8.6",
