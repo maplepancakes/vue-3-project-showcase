@@ -10,7 +10,7 @@
             <section class="flex border">
                 <p class="m-1 text-center" style="width: 14.28%;" v-for="day in days" :key="day">{{ day }}</p>
             </section>
-            <section class="flex border flex-wrap" style="max-width: 430px;">
+            <section class="flex border flex-wrap" style="max-width: 430px; min-height: 194px;">
                 <p class="text-center mt-1 mb-1" style="width: 14.28%;" v-for="emptyDisplay in getStartDayForMonth()" :key="emptyDisplay"></p>
                 <p class="text-center mt-1 mb-1" style="width: 14.28%;" v-for="date in getDateForMonth()" :key="date" :class="highlightCurrentDate(date.toString())">{{ date }}</p>
             </section>
