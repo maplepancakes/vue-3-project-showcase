@@ -1,10 +1,13 @@
-module.exports = {
+module.exports = 
+{
   purge: [],
   darkMode: false, // or 'media' or 'class'
-  theme: {
+  theme: 
+  {
     extend: {},
   },
-  variants: {
+  variants: 
+  {
     extend: {},
   },
   plugins: [],
