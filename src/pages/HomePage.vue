@@ -31,7 +31,16 @@ export default
         + "As time goes on, the navigation bar will be filled up with more projects. For "
         + "now, feel free to view the completed projects by clicking on the applications "
         + "listed in the navigation bar! ",
-      thingsLearntSoFar: ["Text Interpolation", "Directives", "Methods", "Computed Properties", "Components", "Routing"]
+      thingsLearntSoFar: 
+      [
+        "Text Interpolation", 
+        "Directives", 
+        "Methods", 
+        "Computed Properties", 
+        "Components", 
+        "Routing",
+        "Mixins",
+      ]
     }
   }
 }
