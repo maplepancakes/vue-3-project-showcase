@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex mt-10">
         <div class="m-auto p-10">
-            <h1 class="text-3xl text-center font-bold text-gray-400 mt-5 mb-2">Calendar App</h1>
+            <h1 class="text-3xl text-center font-bold text-gray-400 mb-2">Calendar App</h1>
             <div class="flex mb-2 justify-between">
                 <button @click="previousMonth">Prev</button>
                 <h3 class="font-bold">{{ getMonthName() }} {{ year }}</h3>
