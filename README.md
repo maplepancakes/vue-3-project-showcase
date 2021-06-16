@@ -4,8 +4,13 @@
 ##### Objective: To demonstrate a basic understanding of text interpolation, directive usage, methods, computed properties, and components.
 ======
 ### Project 2: Calendar App (Completed)
-##### Objective 1: To demonstrate further understanding of text interpolation, directive usage, methods, computed properties, and components.
-##### Objective 2: To demonstrate a basic understanding of routing.
+##### Objective: To demonstrate a basic understanding of routing.
 ======
+### Project 3: Markdown App (Completed)
+##### Objective: To demonstrate a basic understanding of mixins.
 
-Built using Vue 3, Vue Router, and Tailwind.
+Built using the following libraries: -
+1. Vue 3
+2. Vue Router
+3. Tailwind
+4. Marked
