@@ -36,6 +36,7 @@ const routes =
 
 const router = createRouter(
 {
+  base: '/vue-3-project-showcase/',
   history: createWebHistory(),
   routes,
 })
