@@ -1,4 +1,4 @@
 module.exports = 
 {
-    publicPath: "/",
+    publicPath: "/vue-3-project-showcase/pages/HomePage.vue",
 }
