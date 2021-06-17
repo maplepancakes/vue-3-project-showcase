@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage.vue';
 import ListApp from '../pages/ListApp.vue';
 import CalendarApp from '../pages/CalendarApp.vue';
 import MarkdownApp from '../pages/MarkdownApp.vue';
+import SliderApp from '../pages/SliderApp.vue';
 
 const routes = 
 [
@@ -25,7 +26,12 @@ const routes =
     path: '/markdownApp',
     name: 'Markdown Application',
     component: MarkdownApp,
-  }
+  },
+  {
+    path: '/sliderApp',
+    name: 'Slider Application',
+    component: SliderApp,
+  },
 ]
 
 const router = createRouter(
