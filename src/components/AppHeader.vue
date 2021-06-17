@@ -15,6 +15,7 @@ export default
                 {to: "/listApp", title: "List App"},
                 {to: "/calendarApp", title: "Calendar App"},
                 {to: "/markdownApp", title: "Markdown App"},
+                {to: "/sliderApp", title: "Slider App"},
             ]
         }
     }
