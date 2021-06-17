@@ -40,6 +40,9 @@ export default
         "Components", 
         "Routing",
         "Mixins",
+        "Virtual DOM",
+        "Lifecycle Hooks",
+        "Leave & Enter Transitions",
       ]
     }
   }
