@@ -1,5 +1,8 @@
 <template>
-  <AppHeader/>
+  <AppHeader @open-login-screen="isLoginScreen = true"/>
+  <transition name="fade">
+    <LoginForm v-if="isLoginScreen" :getLoginScreenBoolean="isLoginScreen" @close-login-screen="isLoginScreen = false"/>
+  </transition>
   <transition name="fade">
     <router-view></router-view>
   </transition>
@@ -9,12 +12,20 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
+import LoginForm from "./components/LoginForm.vue";
 export default
 {
   components:
   {
     AppHeader,
     AppFooter,
+    LoginForm,
+  },
+  data()
+  {
+    return {
+      isLoginScreen: false,
+    }
   }
 }
 </script>
