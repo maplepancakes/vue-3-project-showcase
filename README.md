@@ -12,6 +12,9 @@
 ### Project 4: Slider App (Completed)
 ##### Objective: To demonstrate a basic understanding of lifecycle hooks, as well as enter and leave transitions.
 ======
+### Project 5: Login Form (In Progress)
+##### Objective: To demonstrate a basic understanding of props and the $emit method.
+======
 
 Built using the following libraries: -
 1. Vue 3
