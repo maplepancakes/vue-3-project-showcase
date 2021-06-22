@@ -18,5 +18,3 @@ Built using the following libraries: -
 2. Vue Router
 3. Tailwind
 4. Marked
-
-Live link: https://maplepancakes.github.io/vue-3-project-showcase/
