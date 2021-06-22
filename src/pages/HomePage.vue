@@ -43,6 +43,8 @@ export default
         "Virtual DOM",
         "Lifecycle Hooks",
         "Leave & Enter Transitions",
+        "$emit",
+        "props",
       ]
     }
   }
