@@ -8,8 +8,8 @@
           <button @click="removeFromListing(list)">X</button>
         </li>
       </ul>
-      <input class="border mt-5" v-model.lazy="input" placeholder=" Input anything!">
-      <button class="border ml-2 pl-1 pr-1" @click="addInputToListing">Add Data</button>
+      <input :class="defaultInputStyle()" class="mt-5" v-model.lazy="input" placeholder=" Input anything!">
+      <button :class="defaultButtonHoverStyle()" class="border ml-2 pl-1 pr-1 pt-2 pb-2" @click="addInputToListing">Add Data</button>
       <br/>
       <br/>
       <label class="font-bold">Length of list: {{ listLength }} </label>
@@ -18,54 +18,58 @@
 </template>
 
 <script>
+import defaultButtonHoverStyle from "../mixins/defaultButtonHoverStyle.js";
+import defaultInputStyle from "../mixins/defaultInputStyle.js";
+
 export default 
 {
-    data()
-    {
-        return {
-        listing: ["Chocolate Cake", "Ramen", "Fried Rice", "Roasted Pork", "Chili"],
-        input: "",
-        alertMessageBlank: "Input cannot be blank!",
-        alertMessageExistingInput: "Input already in existing list!",
-        }
-    },
-    methods:
-    {
-        addInputToListing()
+  mixins: [defaultButtonHoverStyle, defaultInputStyle],
+  data()
+  {
+      return {
+      listing: ["Chocolate Cake", "Ramen", "Fried Rice", "Roasted Pork", "Chili"],
+      input: "",
+      alertMessageBlank: "Input cannot be blank!",
+      alertMessageExistingInput: "Input already in existing list!",
+      }
+  },
+  methods:
+  {
+      addInputToListing()
+      {
+        if (this.input === "")
         {
-          if (this.input === "")
-          {
-              alert(this.alertMessageBlank);
+            alert(this.alertMessageBlank);
+
+            return;
+        }
+
+        for (let i = 0; i < this.listing.length; i++)
+        {
+            if (this.input === this.listing[i])
+            {
+              alert(this.alertMessageExistingInput);
 
               return;
-          }
+            }
+        }
 
-          for (let i = 0; i < this.listing.length; i++)
-          {
-              if (this.input === this.listing[i])
-              {
-                alert(this.alertMessageExistingInput);
+        this.listing.push(this.input);
 
-                return;
-              }
-          }
-
-          this.listing.push(this.input);
-
-          this.input = "";
-        },
-        removeFromListing(listToRemove)
-        {
-          this.listing = this.listing.filter(list => {return list !== listToRemove});
-        },
-    },
-    computed:
-    {
-        listLength()
-        {
-          return this.listing.length;
-        },
-    },
+        this.input = "";
+      },
+      removeFromListing(listToRemove)
+      {
+        this.listing = this.listing.filter(list => {return list !== listToRemove});
+      },
+  },
+  computed:
+  {
+      listLength()
+      {
+        return this.listing.length;
+      },
+  },
 }
 </script>
 
