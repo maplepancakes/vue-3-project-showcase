@@ -36,6 +36,7 @@ const routes =
 
 const router = createRouter(
 {
+  base: '/homePage/',
   history: createWebHistory(),
   routes,
 })
