@@ -8,7 +8,7 @@ import SliderApp from '../pages/SliderApp.vue';
 const routes = 
 [
   {
-    path: '/',
+    path: '/homePage',
     name: 'Home Page',
     component: HomePage,
   },
@@ -36,7 +36,6 @@ const routes =
 
 const router = createRouter(
 {
-  base: '/vue-3-project-showcase/',
   history: createWebHistory(),
   routes,
 })
