@@ -5,18 +5,19 @@
             <textarea v-model="textInput" class="w-1/2 border mr-1 p-2 resize-none" placeholder="Input your markdown text here! (e.g. **This is a bold text**)"></textarea>
             <article id="output" class="w-1/2 border ml-1 p-2"></article>
         </div>
-        <button @click="markTextInput()" class="ml-5 w-28 border text-gray-400 p-2 focus:outline-none hover:bg-gray-100 transition ease-out duration-500">Convert</button>
-        <button @click="resetInput()" class="ml-5 w-28 border text-gray-400 p-2 focus:outline-none hover:bg-gray-100 transition ease-out duration-500">Reset</button>
+        <button @click="markTextInput()" :class="defaultButtonHoverStyle()" class="ml-5 w-28 border text-gray-400 p-2">Convert</button>
+        <button @click="resetInput()" :class="defaultButtonHoverStyle()" class="ml-5 w-28 border text-gray-400 p-2">Reset</button>
     </div>
 </template>
 
 <script>
 import marked from "marked";
 import selectElement from "../mixins/selectElement.js";
+import defaultButtonHoverStyle from "../mixins/defaultButtonHoverStyle.js";
 
 export default 
 {
-    mixins: [selectElement],
+    mixins: [selectElement, defaultButtonHoverStyle],
     data()
     {
         return {
