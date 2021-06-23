@@ -21,3 +21,4 @@ Built using the following libraries: -
 2. Vue Router
 3. Tailwind
 4. Marked
+5. Firebase
