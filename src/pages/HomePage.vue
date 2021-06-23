@@ -10,6 +10,12 @@
       <ul class="mt-2">
         <li v-for="things in thingsLearntSoFar" :key="things">- {{ things }}</li>
       </ul>
+      <h1 class="mt-2 text-2xl font-extralight text-gray-400 text-justify border p-2">
+        Libraries Used For This Project
+      </h1>
+      <ul class="mt-2">
+        <li v-for="libraries in librariesUsedForThisProject" :key="libraries">- {{ libraries }}</li>
+      </ul>
   </div>
 </div>
 </template>
@@ -45,7 +51,15 @@ export default
         "Leave & Enter Transitions",
         "$emit",
         "props",
-      ]
+      ],
+      librariesUsedForThisProject:
+      [
+        "Vue 3",
+        "Vue Router",
+        "Tailwind",
+        "Marked",
+        "Firebase",
+      ],
     }
   }
 }
