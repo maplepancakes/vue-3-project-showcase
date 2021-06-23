@@ -1,7 +1,7 @@
 <template>
-  <AppHeader @open-login-screen="isLoginScreen = true"/>
+  <AppHeader @open-login-screen="isLoginScreen = true" @logout="loginState = false; logout()" :loginState="loginState"/>
   <transition name="fade">
-    <LoginForm v-if="isLoginScreen" :getLoginScreenBoolean="isLoginScreen" @close-login-screen="isLoginScreen = false"/>
+    <LoginForm v-if="isLoginScreen" @close-login-screen="isLoginScreen = false" @login-success="loginState = true"/>
   </transition>
   <transition name="fade">
     <router-view></router-view>
@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import firebase from "./firebase/firebase.js";
+
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 import LoginForm from "./components/LoginForm.vue";
@@ -25,6 +27,28 @@ export default
   {
     return {
       isLoginScreen: false,
+      loginState: false,
+    }
+  },
+  methods:
+  {
+    logout()
+    {
+      firebase
+      .auth()
+      .signOut()
+      .then(() =>
+      {
+        window.location.reload();
+      })
+      .catch((error) =>
+      {
+        let errorCode = error.code;
+        let errorMessage = error.message;
+
+        console.log("Sign Out Error Code: ", errorCode);
+        console.log("Sign Out Error Message: ", errorMessage);
+      });
     }
   }
 }
