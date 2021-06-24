@@ -6,14 +6,14 @@
                 <div class="z-30 bg-white w-auto shadow border">
                     <div class="p-5 text-sm">
                         <form @submit.prevent="onSubmit" class="mb-2">   
-                            <label for="input-user">Email or Username</label>
-                            <input v-model="form.user" @keydown.enter="this.submit()" :class="defaultInputStyle()" id="input-user" class="w-96" type="text" placeholder="Enter your email or username">
+                            <label for="inputUser">Email or Username</label>
+                            <input ref="inputUser" v-model="form.user" @keydown.enter="this.submit()" :class="defaultInputStyle()" class="w-96" type="text" placeholder="Enter your email or username">
                         </form>
                         <form @submit.prevent="onSubmit" class="mb-2">
-                            <label for="input-password">Password</label>
-                            <input v-model="form.password" @keydown.enter="this.submit()" :class="defaultInputStyle()" id="input-password" class="w-96" type="password" placeholder="Enter your password">
+                            <label for="inputPassword">Password</label>
+                            <input ref="inputPassword" v-model="form.password" @keydown.enter="this.submit()" :class="defaultInputStyle()" class="w-96" type="password" placeholder="Enter your password">
                         </form>
-                        <button @click="this.submit()" :class="defaultButtonHoverStyle()" id="login-button" class="border p-1 mb-2 w-96" type="submit"></button>
+                        <button ref="loginButton" @click="this.submit()" :class="defaultButtonHoverStyle()" id="login-button" class="border p-1 mb-2 w-96" type="submit"></button>
                         <label v-if="invalidInput" class="text-red-400">Invalid email or password!</label>
                     </div>
                 </div>
@@ -27,11 +27,10 @@ import firebase from "../firebase/firebase.js";
 
 import defaultButtonHoverStyle from "../mixins/defaultButtonHoverStyle.js";
 import defaultInputStyle from "../mixins/defaultInputStyle.js";
-import selectElement from "../mixins/selectElement.js";
 
 export default 
 {
-    mixins: [defaultButtonHoverStyle, defaultInputStyle, selectElement],
+    mixins: [defaultButtonHoverStyle, defaultInputStyle],
     data()
     {
         return {
@@ -55,7 +54,7 @@ export default
             {
                 this.invalidInput = false;
 
-                const loginButton = this.selectElement("#login-button");
+                const loginButton = this.$refs.loginButton;
                 loginButton.textContent = this.loginButtonText[1];
 
                 setTimeout(() =>
@@ -82,8 +81,8 @@ export default
 
                 this.invalidInput = true;
 
-                const inputUser = this.selectElement("#input-user");
-                const inputPassword = this.selectElement("#input-password");
+                const inputUser = this.$refs.inputUser;
+                const inputPassword = this.$refs.inputPassword;
 
                 inputUser.classList.add("border-red-400");
                 inputPassword.classList.add("border-red-400");
@@ -93,8 +92,8 @@ export default
     },
     mounted()
     {
-        const loginButton = this.selectElement("#login-button");
-        loginButton.textContent = this.loginButtonText[0];
+        this.$refs.inputUser.focus();
+        this.$refs.loginButton.textContent = this.loginButtonText[0];
     }
 }
 </script>
