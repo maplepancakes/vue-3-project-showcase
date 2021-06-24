@@ -51,6 +51,7 @@ export default
         "Leave & Enter Transitions",
         "$emit",
         "props",
+        "$refs",
       ],
       librariesUsedForThisProject:
       [
