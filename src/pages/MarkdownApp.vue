@@ -13,10 +13,47 @@
 <script>
 import marked from "marked";
 import defaultButtonHoverStyle from "../mixins/defaultButtonHoverStyle.js";
+import { ref, onMounted } from "vue";
 
 export default 
 {
+    setup()
+    {
+        // refs
+        const textAreaMarkdown = ref("");
+        const output = ref("");
+
+        // data
+        const textInput = ref("");
+
+        // methods
+        function markTextInput()
+        {
+            output.value.innerHTML = marked(textInput.value);
+        }
+
+        function resetInput()
+        {
+            textInput.value = "";
+            output.value.innerHTML = "";
+        }   
+
+        // mounted
+        onMounted(() =>
+        {
+            textAreaMarkdown.value.focus();
+        });
+
+        return {
+            textAreaMarkdown,
+            output,
+            textInput,
+            markTextInput,
+            resetInput,
+        }
+    },
     mixins: [defaultButtonHoverStyle],
+    /*
     data()
     {
         return {
@@ -39,6 +76,7 @@ export default
     {
         this.$refs.textAreaMarkdown.focus();
     }
+    */
 }
 </script>
 
