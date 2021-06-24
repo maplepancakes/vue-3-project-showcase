@@ -21,7 +21,7 @@
 </template>
 
 <script>
-export default 
+export default  
 {
   data()
   {
@@ -52,6 +52,8 @@ export default
         "$emit",
         "props",
         "$refs",
+        "Teleport",
+        "Composition API"
       ],
       librariesUsedForThisProject:
       [
