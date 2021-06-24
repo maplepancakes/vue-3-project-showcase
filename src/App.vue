@@ -1,7 +1,7 @@
 <template>
-  <AppHeader @open-login-screen="isLoginScreen = true" @logout="logout()" :loginState="loginState"/>
+  <AppHeader @open-login-screen="isLoginScreen = true" @logout="logout()" :isLoggedIn="isLoggedIn"/>
   <transition name="fade">
-    <LoginForm v-if="isLoginScreen" @close-login-screen="isLoginScreen = false" @login-success="loginState = true"/>
+    <LoginForm v-if="isLoginScreen" @close-login-screen="isLoginScreen = false"/>
   </transition>
   <transition name="fade">
     <router-view></router-view>
@@ -27,7 +27,7 @@ export default
   {
     return {
       isLoginScreen: false,
-      loginState: false,
+      isLoggedIn: false,
     }
   },
   methods:
@@ -50,6 +50,38 @@ export default
         console.log("Sign Out Error Message: ", errorMessage);
       });
     }
+  },
+  beforeMount()
+  {
+    this.isLoggedIn = false;
+  },
+  mounted()
+  {
+    firebase.auth().getRedirectResult()
+    .then((result) =>
+    {
+      const pushToFirebaseUser = firebase.auth.GoogleAuthProvider.credential(result.idToken);
+
+      firebase.auth().signInWithCredential(pushToFirebaseUser);
+    })
+    .catch((error) =>
+    {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
+
+    firebase.auth().onAuthStateChanged((user) =>
+    {
+      if (user)
+      {
+        this.isLoggedIn = true;
+
+        return;
+      }
+    })
   }
 }
 </script>
