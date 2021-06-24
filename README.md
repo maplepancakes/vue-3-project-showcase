@@ -7,7 +7,7 @@
 ##### Objective: To demonstrate a basic understanding of routing.
 ======
 ### Project 3: Markdown App (Completed)
-##### Objective: To demonstrate a basic understanding of mixins.
+##### Objective: To demonstrate a basic understanding of mixins and composition API.
 ======
 ### Project 4: Slider App (Completed)
 ##### Objective: To demonstrate a basic understanding of lifecycle hooks, as well as enter and leave transitions.
