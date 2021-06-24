@@ -1,5 +1,5 @@
 <template>
-  <AppHeader @open-login-screen="isLoginScreen = true" @logout="loginState = false; logout()" :loginState="loginState"/>
+  <AppHeader @open-login-screen="isLoginScreen = true" @logout="logout()" :loginState="loginState"/>
   <transition name="fade">
     <LoginForm v-if="isLoginScreen" @close-login-screen="isLoginScreen = false" @login-success="loginState = true"/>
   </transition>
