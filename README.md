@@ -15,6 +15,7 @@
 ### Project 5: Login Form (In Progress)
 ##### Objective: To demonstrate a basic understanding of props and the $emit method.
 ======
+##### Other Objectives: To demonstrate a basic understanding on how to use Tailwind and Firebase authentication.
 
 Built using the following libraries: -
 1. Vue 3
