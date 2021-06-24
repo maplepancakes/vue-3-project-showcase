@@ -7,14 +7,25 @@
                     <div class="p-5 text-sm">
                         <form @submit.prevent="onSubmit" class="mb-2">   
                             <label for="inputUser">Email or Username</label>
-                            <input ref="inputUser" v-model="form.user" @keydown.enter="this.submit()" :class="defaultInputStyle()" class="w-96" type="text" placeholder="Enter your email or username">
+                            <input ref="inputUser" v-model="form.user" @keydown.enter="this.login()" :class="defaultInputStyle()" class="w-96" type="text" placeholder="Enter your email or username">
                         </form>
                         <form @submit.prevent="onSubmit" class="mb-2">
                             <label for="inputPassword">Password</label>
-                            <input ref="inputPassword" v-model="form.password" @keydown.enter="this.submit()" :class="defaultInputStyle()" class="w-96" type="password" placeholder="Enter your password">
+                            <input ref="inputPassword" v-model="form.password" @keydown.enter="this.login()" :class="defaultInputStyle()" class="w-96" type="password" placeholder="Enter your password">
                         </form>
-                        <button ref="loginButton" @click="this.submit()" :class="defaultButtonHoverStyle()" id="login-button" class="border p-1 mb-2 w-96" type="submit"></button>
+                        <button ref="loginButton" @click="this.login()" :class="defaultButtonHoverStyle()" class="border p-1 mb-2 w-96" type="submit"></button>
                         <label v-if="invalidInput" class="text-red-400">Invalid email or password!</label>
+                        <div class="mt-5">
+                            <button ref="loginButtonGoogle" @click="loginWithGoogle()" :class="defaultButtonHoverStyle()" class="border p-1 mb-2 w-96" type="submit">
+                                Login with 
+                                <span class="text-blue-400">G</span>
+                                <span class="text-red-400">o</span>
+                                <span class="text-yellow-400">o</span>
+                                <span class="text-blue-400">g</span>
+                                <span class="text-green-400">l</span>
+                                <span class="text-red-400">e</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,7 +56,7 @@ export default
     },
     methods:
     {
-        submit()
+        login()
         {
             firebase
             .auth()
@@ -65,7 +76,6 @@ export default
                 setTimeout(() =>
                 {
                     this.$emit('close-login-screen');
-                    this.$emit('login-success');
 
                     this.form.user = "";
                     this.form.password = ""; 
@@ -88,6 +98,12 @@ export default
                 inputPassword.classList.add("border-red-400");
 
             });
+        },
+        loginWithGoogle()
+        {
+            let googleProvider = new firebase.auth.GoogleAuthProvider();
+
+            firebase.auth().signInWithRedirect(googleProvider);
         }
     },
     mounted()
