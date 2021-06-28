@@ -4,6 +4,7 @@ import ListApp from '../pages/ListApp.vue';
 import CalendarApp from '../pages/CalendarApp.vue';
 import MarkdownApp from '../pages/MarkdownApp.vue';
 import SliderApp from '../pages/SliderApp.vue';
+import CalculatorApp from '../pages/Calculator.vue';
 
 const routes = 
 [
@@ -32,6 +33,11 @@ const routes =
     name: 'Slider Application',
     component: SliderApp,
   },
+  {
+    path: '/calculatorApp',
+    name: 'Calculator Application',
+    component: CalculatorApp,
+  }
 ]
 
 const router = createRouter(
