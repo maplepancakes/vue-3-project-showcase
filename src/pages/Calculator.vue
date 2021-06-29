@@ -39,7 +39,6 @@ export default
         const display = ref("0");
 
         let calculatingValue = 0;
-        let totalValue = 0;
 
         function updateDisplay(value)
         {
@@ -60,12 +59,11 @@ export default
         {
             display.value = "0";
             calculatingValue = 0;
-            totalValue = 0;
         }
 
         function addition()
         {
-            
+            display.value = parseInt(display.value) + calculatingValue;
         }
 
         function subtraction()
@@ -85,13 +83,12 @@ export default
 
         function equals()
         {
-            display.value = totalValue;
+            
         }
 
         return  {
             display,
             calculatingValue,
-            totalValue,
             updateDisplay,
             clear,
             addition,
