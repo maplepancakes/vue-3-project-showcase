@@ -12,8 +12,11 @@
 ### Project 4: Slider App (Completed)
 ##### Objective: To demonstrate a basic understanding of lifecycle hooks, as well as enter and leave transitions.
 ======
-### Project 5: Login Form (In Progress)
+### Project 5: Login Form (Completed)
 ##### Objective: To demonstrate a basic understanding of props and the $emit method.
+======
+### Project 6: Calculator App (Completed)
+##### Objective: To demonstrate a further basic understanding of composition API.
 ======
 ##### Other Objectives: To demonstrate a basic understanding on how to use Tailwind and Firebase authentication.
 
