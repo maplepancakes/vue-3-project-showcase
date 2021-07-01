@@ -29,18 +29,18 @@
 
 <script>
 import defaultButtonHoverStyle from "../mixins/defaultButtonHoverStyle.js";
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 export default 
 {
     mixins: [defaultButtonHoverStyle],
     setup()
     {
-        const display = ref("0");
+        const display = ref("0"); // value on calculator display
 
-        let storedValue = 0;
-        let operator = "";
-        let operatorInUse = false;
+        let storedValue = 0; // value that is stored after an operator is pressed
+        let operator = ""; // stores pressed operator
+        let operatorInUse = false; // determines if operator is in use
 
         function updateDisplay(value)
         {
@@ -131,6 +131,77 @@ export default
             operator = "";
         }
 
+        function useKeyDown(e)
+        {
+            switch (e.key)
+            {
+                case "0":
+                    updateDisplay("0");
+                    break;
+                case "1":
+                    updateDisplay("1");
+                    break;
+                case "2":
+                    updateDisplay("2");
+                    break;
+                case "3":
+                    updateDisplay("3");
+                    break;
+                case "4":
+                    updateDisplay("4");
+                    break;
+                case "5":
+                    updateDisplay("5");
+                    break;
+                case "6":
+                    updateDisplay("6");
+                    break;
+                case "7":
+                    updateDisplay("7");
+                    break;
+                case "8":
+                    updateDisplay("8");
+                    break;
+                case "9":
+                    updateDisplay("9");
+                    break;
+
+                case "C":
+                    clear();
+                    break;
+
+                case "+":
+                    operate("+");
+                    break;
+                case "-":
+                    operate("-");
+                    break;
+                case "*":
+                    operate("*");
+                    break;
+                case "/":
+                    operate("/");
+                    break;
+                
+                case "=":
+                    equals();
+                    break;
+                case "Enter":
+                    equals();
+                    break;
+            }
+        }
+        
+        onMounted(() =>
+        {
+            window.addEventListener("keydown", useKeyDown)
+        });
+
+        onUnmounted(() =>
+        {
+            window.removeEventListener("keydown", useKeyDown)
+        });
+
         return  {
             display,
             storedValue,
@@ -141,6 +212,7 @@ export default
             updateDisplay,
             clear,
             equals,
+            useKeyDown,
         };
     }
 }
