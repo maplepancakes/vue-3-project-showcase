@@ -4,7 +4,7 @@ import ListApp from '../pages/ListApp.vue';
 import CalendarApp from '../pages/CalendarApp.vue';
 import MarkdownApp from '../pages/MarkdownApp.vue';
 import SliderApp from '../pages/SliderApp.vue';
-import CalculatorApp from '../pages/Calculator.vue';
+import CalculatorApp from '../pages/CalculatorApp.vue';
 
 const routes = 
 [
