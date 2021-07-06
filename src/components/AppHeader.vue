@@ -28,6 +28,7 @@ export default
                 {to: "/markdownApp", title: "Markdown App"},
                 {to: "/sliderApp", title: "Slider App"},
                 {to: "/calculatorApp", title: "Calculator App"},
+                {to: "/randomColoursApp", title: "Random Colours App"},
             ]
         }
     },

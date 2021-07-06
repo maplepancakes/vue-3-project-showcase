@@ -5,6 +5,7 @@ import CalendarApp from '../pages/CalendarApp.vue';
 import MarkdownApp from '../pages/MarkdownApp.vue';
 import SliderApp from '../pages/SliderApp.vue';
 import CalculatorApp from '../pages/CalculatorApp.vue';
+import RandomColoursApp from '../pages/RandomColoursApp.vue';
 
 const routes = 
 [
@@ -37,6 +38,11 @@ const routes =
     path: '/calculatorApp',
     name: 'Calculator Application',
     component: CalculatorApp,
+  },
+  {
+    path: '/randomColoursApp',
+    name: 'Random Colours Application',
+    component: RandomColoursApp,
   }
 ]
 
