@@ -18,6 +18,9 @@
 ### Project 6: Calculator App (Completed)
 ##### Objective: To demonstrate a further basic understanding of composition API.
 ======
+### Project 7: Random Colours App (Complete)
+##### Objective: To demonstrate a basic understanding of slots and importing functions for use in composition API.
+======
 ##### Other Objectives: To demonstrate a basic understanding on how to use Tailwind and Firebase authentication.
 
 Built using the following libraries: -
