@@ -53,7 +53,8 @@ export default
         "props",
         "$refs",
         "Teleport",
-        "Composition API"
+        "Composition API",
+        "slots",
       ],
       librariesUsedForThisProject:
       [
