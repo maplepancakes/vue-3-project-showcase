@@ -27,18 +27,18 @@ export default
         {
             firebase.database().ref("chats/" + "M" + chatID.value).set(
                 {
-                    message: chatInput.value,
+                    message: chatInput.value.value,
                 });
             
             firebase.database().ref("chatIDCounter/").set(chatID.value + 1);
             
-            chatInput.value = "";
+            chatInput.value.value = "";
         }
 
         onMounted(() =>
         {
-            FirebaseMethods.readDataFromFirebase("chatIDCounter", chatID);
-            FirebaseMethods.readDataFromFirebase("chats", messages);
+            FirebaseMethods.readDataFromFirebaseUsingRef("chatIDCounter", chatID);
+            FirebaseMethods.readDataFromFirebaseUsingRef("chats", messages);
         });
 
         return {
