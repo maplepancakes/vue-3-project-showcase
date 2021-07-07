@@ -3,7 +3,7 @@ import firebase from "../firebase/firebase.js";
 
 const FirebaseMethods = (function()
 {
-    const readDataFromFirebase = async function(path, variable)
+    const readDataFromFirebaseUsingRef = async function(path, refVariable)
     {
         // entire block until messages.value = data used to retrieve data upon page load
         const database = firebase.database();
@@ -11,19 +11,17 @@ const FirebaseMethods = (function()
         const fetchData = await collection.once("value");
         const data = fetchData.val();
 
-        variable.value = data;
+        refVariable.value = data;
 
         // updates page with new data if there are any changes to the database
         collection.on("value", (snapshot) =>
         {
-            variable.value = snapshot.val();
+            refVariable.value = snapshot.val();
         });
-
-        console.log(variable);
     }
 
     return {
-        readDataFromFirebase,
+        readDataFromFirebaseUsingRef,
     }
 })();
 
