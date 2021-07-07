@@ -5,7 +5,7 @@ const FirebaseMethods = (function()
 {
     const readDataFromFirebaseUsingRef = async function(path, refVariable)
     {
-        // entire block until messages.value = data used to retrieve data upon page load
+        // entire block until refVariable.value = data used to retrieve data upon page load
         const database = firebase.database();
         const collection = database.ref(path); 
         const fetchData = await collection.once("value");
