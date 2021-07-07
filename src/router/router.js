@@ -6,6 +6,7 @@ import MarkdownApp from '../pages/MarkdownApp.vue';
 import SliderApp from '../pages/SliderApp.vue';
 import CalculatorApp from '../pages/CalculatorApp.vue';
 import RandomColoursApp from '../pages/RandomColoursApp.vue';
+import ChatApp from '../pages/ChatApp.vue';
 
 const routes = 
 [
@@ -43,6 +44,11 @@ const routes =
     path: '/randomColoursApp',
     name: 'Random Colours Application',
     component: RandomColoursApp,
+  },
+  {
+    path: '/chatApp',
+    name: 'Chat Application',
+    component: ChatApp,
   }
 ]
 

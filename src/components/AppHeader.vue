@@ -29,6 +29,7 @@ export default
                 {to: "/sliderApp", title: "Slider App"},
                 {to: "/calculatorApp", title: "Calculator App"},
                 {to: "/randomColoursApp", title: "Random Colours App"},
+                {to: "/chatApp", title: "Chat App"},
             ]
         }
     },
