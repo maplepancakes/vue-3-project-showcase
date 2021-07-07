@@ -14,6 +14,14 @@ import firebase from "../firebase/firebase.js";
 import defaultInputStyle from "../mixins/defaultInputStyle.js";
 import FirebaseMethods from "../composition/FirebaseMethods.js";
 
+/* =====================
+Things left to implement
+1. Add checking where user messages are displayed on the right, and incoming messages from the left
+
+OPTIONAL FEATURES: -
+1. Add chat bubbles
+2. Add timestamps of chats
+===================== */
 export default 
 {
     mixins: [defaultInputStyle],
