@@ -4,7 +4,7 @@
     <LoginForm v-if="isLoginScreen" @close-login-screen="isLoginScreen = false"/>
   </transition>
   <transition name="fade">
-    <router-view></router-view>
+    <router-view :isLoggedIn="isLoggedIn"></router-view>
   </transition>
   <AppFooter/>
 </template>
@@ -57,6 +57,7 @@ export default
   },
   mounted()
   {
+    /*
     firebase.auth().getRedirectResult()
     .then((result) =>
     {
@@ -72,6 +73,7 @@ export default
       console.log(errorCode);
       console.log(errorMessage);
     });
+    */
 
     firebase.auth().onAuthStateChanged((user) =>
     {
@@ -81,7 +83,7 @@ export default
 
         return;
       }
-    })
+    });
   }
 }
 </script>
