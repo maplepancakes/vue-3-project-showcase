@@ -13,7 +13,7 @@
 ##### Objective: To demonstrate a basic understanding of lifecycle hooks, as well as enter and leave transitions.
 ======
 ### Project 5: Login Form (Completed)
-##### Objective: To demonstrate a basic understanding of props and the $emit method.
+##### Objective: To demonstrate a basic understanding of props, $emit, and how to utilize firebase authentication.
 ======
 ### Project 6: Calculator App (Completed)
 ##### Objective: To demonstrate a further basic understanding of composition API.
@@ -21,7 +21,9 @@
 ### Project 7: Random Colours App (Complete)
 ##### Objective: To demonstrate a basic understanding of slots and importing functions for use in composition API.
 ======
-##### Other Objectives: To demonstrate a basic understanding on how to use Tailwind and Firebase authentication.
+### Project 8: Chat App (Complete)
+##### Objective: To demonstrate a basic understanding on how to utilize various features of firebase's real-time database.
+======
 
 Built using the following libraries: -
 1. Vue 3
