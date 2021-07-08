@@ -78,7 +78,7 @@ export default
                     {
                         console.log(error);
                     }
-                }, 2500);
+                }, 3000);
             });
 
             currentUserIDInstance.value = await getCurrentUserIDInstance;
