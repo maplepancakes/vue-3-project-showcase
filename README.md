@@ -19,7 +19,7 @@
 ##### Objective: To demonstrate a further basic understanding of composition API.
 ======
 ### Project 7: Random Colours App (Completed)
-##### Objective: To demonstrate a basic understanding of slots and importing functions for use in composition API.
+##### Objective: To demonstrate reusability through a basic understanding of slots and importing functions for use in composition API.
 ======
 ### Project 8: Chat App (Completed)
 ##### Objective: To demonstrate a basic understanding on how to utilize various features of firebase's real-time database.
