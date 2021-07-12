@@ -1,10 +1,10 @@
 <template>
-  <AppHeader @open-login-screen="isLoginScreen = true" @logout="logout()" :isLoggedIn="isLoggedIn"/>
+  <AppHeader @open-login-screen="this.$store.commit('setIsLoginScreen', true)" @logout="logout()"/>
   <transition name="fade">
-    <LoginForm v-if="isLoginScreen" @close-login-screen="isLoginScreen = false"/>
+    <LoginForm v-if="isLoginScreen" @close-login-screen="this.$store.commit('setIsLoginScreen', false)"/>
   </transition>
   <transition name="fade">
-    <router-view :isLoggedIn="isLoggedIn"></router-view>
+    <router-view></router-view>
   </transition>
   <AppFooter/>
 </template>
@@ -23,12 +23,16 @@ export default
     AppFooter,
     LoginForm,
   },
-  data()
+  computed:
   {
-    return {
-      isLoginScreen: false,
-      isLoggedIn: false,
-    }
+    isLoggedIn()
+    {
+      return this.$store.state.isLoggedIn;
+    },
+    isLoginScreen()
+    {
+      return this.$store.state.isLoginScreen;
+    },
   },
   methods:
   {
@@ -53,11 +57,11 @@ export default
   },
   beforeMount()
   {
-    this.isLoggedIn = false;
+    this.$store.commit("setIsLoggedIn", false);
   },
   mounted()
   {
-    
+    /*
     firebase.auth().getRedirectResult()
     .then((result) =>
     {
@@ -73,13 +77,13 @@ export default
       console.log(errorCode);
       console.log(errorMessage);
     });
-    
+    */
 
     firebase.auth().onAuthStateChanged((user) =>
     {
       if (user)
       {
-        this.isLoggedIn = true;
+        this.$store.commit("setIsLoggedIn", true);
 
         return;
       }

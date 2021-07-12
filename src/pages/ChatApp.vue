@@ -16,7 +16,8 @@
 </template>
 
 <script>
-import { ref, onMounted, onUpdated } from "vue";
+import { ref, computed, onMounted, onUpdated } from "vue";
+import { useStore } from "vuex";
 import firebase from "../firebase/firebase.js";
 import defaultInputStyle from "../mixins/defaultInputStyle.js";
 import FirebaseMethods from "../composition/FirebaseMethods.js";
@@ -25,6 +26,7 @@ import ScrollContainerToBottomUsingRef from "../composition/ScrollContainerToBot
 export default 
 {
     mixins: [defaultInputStyle],
+    /*
     props:
     {
         isLoggedIn:
@@ -32,6 +34,7 @@ export default
             type: Boolean,
         }
     },
+    */
     setup()
     {
         const messages = ref({});
@@ -39,6 +42,12 @@ export default
         const chatID = ref({});
         const chatDisplay = ref("");
         const currentUserIDInstance = ref("");
+        const store = useStore();
+
+        const isLoggedIn = computed(() =>
+        {
+            return store.state.isLoggedIn;
+        })
 
         function writeDataToFirebase()
         {
@@ -95,6 +104,7 @@ export default
             chatID,
             chatDisplay,
             currentUserIDInstance,
+            isLoggedIn,
             writeDataToFirebase,
         }
     },

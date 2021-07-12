@@ -11,6 +11,7 @@
 <script>
 export default 
 {
+    /*
     props:
     {
         isLoggedIn:
@@ -18,6 +19,7 @@ export default
             type: Boolean,
         }
     },
+    */
     data()
     {
         return {
@@ -33,5 +35,12 @@ export default
             ]
         }
     },
+    computed:
+    {
+        isLoggedIn()
+        {
+            return this.$store.state.isLoggedIn;
+        }
+    }
 }
 </script>
