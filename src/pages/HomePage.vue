@@ -55,6 +55,7 @@ export default
         "Teleport",
         "Composition API",
         "slots",
+        "Vuex 4",
       ],
       librariesUsedForThisProject:
       [
@@ -65,6 +66,6 @@ export default
         "Firebase",
       ],
     }
-  }
+  },
 }
 </script>

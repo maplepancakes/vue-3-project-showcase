@@ -24,6 +24,7 @@
 ### Project 8: Chat App (Completed)
 ##### Objective: To demonstrate a basic understanding on how to utilize various features of firebase's real-time database.
 ======
+##### Other Objectives: To demonstrate a basic understanding of state management using Vuex 4 through changes made to the following files: App.vue, AppHeader.vue, ChatApp.vue
 
 Built using the following libraries: -
 1. Vue 3
