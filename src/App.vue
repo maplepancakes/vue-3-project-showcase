@@ -57,7 +57,7 @@ export default
   },
   mounted()
   {
-    /*
+    
     firebase.auth().getRedirectResult()
     .then((result) =>
     {
@@ -73,7 +73,7 @@ export default
       console.log(errorCode);
       console.log(errorMessage);
     });
-    */
+    
 
     firebase.auth().onAuthStateChanged((user) =>
     {
