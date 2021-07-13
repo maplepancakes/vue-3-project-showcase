@@ -1,5 +1,7 @@
 # PROJECT STATUS: Completed
 
+### Live link: https://silly-ramanujan-80531e.netlify.app/
+
 ### Project 1: List App (Completed)
 ##### Objective: To demonstrate a basic understanding of text interpolation, directive usage, methods, computed properties, and components.
 ======
