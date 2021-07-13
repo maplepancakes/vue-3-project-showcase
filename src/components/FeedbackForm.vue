@@ -2,15 +2,15 @@
     <form @submit.prevent="onSubmit">
         <label>Name</label>
         <br/>
-        <input ref="name" type="text" :class="defaultInputStyle()" class="mb-2" placeholder="Jake T.D."/>
+        <input ref="name" type="text" :class="defaultInputStyle()" class="mb-2" placeholder="Jake T.D." required/>
         <br/>
         <label>Email</label>
         <br/>
-        <input ref="email" type="email" :class="defaultInputStyle()" class="mb-2" placeholder="rainicorn@advmail.com"/>
+        <input ref="email" type="email" :class="defaultInputStyle()" class="mb-2" placeholder="rainicorn@advmail.com" required/>
         <br/>
         <label>Feedback</label>
         <br/>
-        <textarea ref="feedback" :class="defaultInputStyle()" class="mb-2 h-48 w-96 resize-none" placeholder="needs more dogs" maxlength="200"></textarea>
+        <textarea ref="feedback" :class="defaultInputStyle()" class="mb-2 h-48 w-96 resize-none" placeholder="needs more dogs" maxlength="200" required></textarea>
         <br/>
         <button type="submit" @click="submitFormToFirebase()" :class="defaultButtonHoverStyle()" class="border p-2">
             <slot name="buttonLabel"></slot>
@@ -42,20 +42,8 @@ export default
 
         function submitFormToFirebase()
         {
-            if (name.value.value === "")
+            if (name.value.value === "" || email.value.value === "" || feedback.value.value === "")
             {
-                name.value.classList.add("border-red-400");
-            }
-
-            if (email.value.value === "")
-            {
-                email.value.classList.add("border-red-400");
-            }
-
-            if (feedback.value.value === "")
-            {
-                feedback.value.classList.add("border-red-400");
-                
                 return;
             }
 
@@ -74,10 +62,7 @@ export default
 
                 alert("Your feedback has been received!");
 
-                name.value.value = email.value.value = feedback.value.value = "";
-                name.value.classList.remove("border-red-400");
-                email.value.classList.remove("border-red-400");
-                feedback.value.classList.remove("border-red-400");
+                window.location.reload();
             }
             catch(error)
             {
