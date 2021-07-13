@@ -1,4 +1,4 @@
-# PROJECT STATUS: In Progress
+# PROJECT STATUS: Completed
 
 ### Project 1: List App (Completed)
 ##### Objective: To demonstrate a basic understanding of text interpolation, directive usage, methods, computed properties, and components.
