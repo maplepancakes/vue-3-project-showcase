@@ -60,8 +60,9 @@ const routes =
 
 const router = createRouter(
 {
-  base: '/homePage/',
+  base: '/homePage',
   history: createWebHistory(),
+  mode: 'hash',
   routes,
 })
 
