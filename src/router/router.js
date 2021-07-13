@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../pages/HomePage.vue';
+import Feedback from '../pages/Feedback.vue';
 import ListApp from '../pages/ListApp.vue';
 import CalendarApp from '../pages/CalendarApp.vue';
 import MarkdownApp from '../pages/MarkdownApp.vue';
@@ -14,6 +15,11 @@ const routes =
     path: '/homePage',
     name: 'Home Page',
     component: HomePage,
+  },
+  {
+    path: '/feedback',
+    name: 'Feedback',
+    component: Feedback,
   },
   {
     path: '/listApp',
