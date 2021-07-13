@@ -12,7 +12,7 @@ import ChatApp from '../pages/ChatApp.vue';
 const routes = 
 [
   {
-    path: '/homePage',
+    path: '/',
     name: 'Home Page',
     component: HomePage,
   },
@@ -60,9 +60,7 @@ const routes =
 
 const router = createRouter(
 {
-  base: '/homePage',
   history: createWebHistory(),
-  mode: 'hash',
   routes,
 })
 
